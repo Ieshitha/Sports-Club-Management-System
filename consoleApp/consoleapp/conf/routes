@@ -1,0 +1,25 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+
+POST    /club                                   controllers.SportsClubController.create(request : Request)
+GET     /list                                   controllers.SportsClubController.listSportsClub()
+POST    /create                                 controllers.SportsClubController.create(request: Request)
+PUT     /update                                 controllers.SportsClubController.update(request: Request)
+GET     /random                                 controllers.SportsClubController.randomGenerator()
+GET     /sortByMatch                            controllers.SportsClubController.sortByMatch()
+GET     /sortByWins                             controllers.SportsClubController.sortByWins()
+GET     /sortByGoal                             controllers.SportsClubController.sortByGoal()
+POST    /filterByDate                           controllers.SportsClubController.sortDate(request: Request)
+GET     /:id                                    controllers.SportsClubController.retrieve(id:Int)
+POST    /                                       controllers.SportsClubController.create(request: Request)
+PUT     /                                       controllers.SportsClubController.update(request: Request)
+DELETE  /:id                                    controllers.SportsClubController.delete(id:Int)
+
